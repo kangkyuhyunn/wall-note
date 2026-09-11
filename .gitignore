@@ -1,0 +1,26 @@
+# macOS and Xcode
+.DS_Store
+._*
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# Generated apps, archives, caches and local test runs
+*.app/
+*.zip
+*.dmg
+*.dSYM/
+.build/
+build/
+work/
+ModuleCache/
+test-data/
+*.log
+
+# Personal notes and local credentials
+notes.json
+.env
+.env.*
+*.pem
+*.p12
+*.key
