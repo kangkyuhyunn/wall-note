@@ -64,27 +64,3 @@ zsh test.sh
 ```
 
 `build.sh`는 Apple Silicon용 최적화 빌드와 로컬 서명을 만듭니다. `Source`에 UI, 저장 모델, 테스트, 아이콘 생성 코드가 들어 있습니다.
-
-## 프로젝트 수정과 GitHub
-
-- `Source/WallNote.swift`: 화면, 문구, 메뉴, 입력과 창 동작
-- `Source/Models.swift`, `Source/MemoStore.swift`: 메모와 창 위치 저장
-- `Source/PanelPlacement.swift`, `Source/SidebarLayout.swift`: 화면 위치와 카드 높이 계산
-- `Source/Info.plist`: 앱 표시 이름과 버전
-
-Xcode에서 Swift 파일을 열어 편집한 다음 `zsh build.sh`를 실행하면 새 앱에 반영됩니다. 현재는 빌드 스크립트 방식이며 `.xcodeproj`는 포함하지 않습니다.
-
-GitHub 저장소: [kangkyuhyunn/wall-note](https://github.com/kangkyuhyunn/wall-note)
-
-Git은 변경 이력을 이 Mac에 기록하고, GitHub는 그 이력을 보관하는 원격 저장소입니다. 원격 저장소 연결 후에는 다음 순서로 수정 내용을 올립니다.
-
-```sh
-git status
-git add Source README.md build.sh test.sh .gitignore .gitattributes
-git commit -m "Update Wall Note"
-git push
-```
-
-터미널에서 처음 `git push`할 때는 GitHub 인증이 필요합니다. 브라우저 로그인과 Git 인증은 별개입니다.
-
-개인 메모 파일(`notes.json`), 앱 실행 파일, 빌드 결과, 캐시와 인증 파일은 `.gitignore`로 제외합니다. 앱 배포 파일은 소스 이력과 별도로 관리합니다.
